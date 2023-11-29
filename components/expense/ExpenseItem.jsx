@@ -4,10 +4,18 @@ import { GlobalStyles } from "../../constants/styles";
 function ExpenseItem({ description, date, amount }) {
   return (
     <Pressable>
-      <View>
-        <Text> {description} </Text>
-        <Text> {date.toString()}</Text>
-        <Text> {amount} </Text>
+      <View style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={[styles.textBase, styles.description]}>
+            {" "}
+            {description}{" "}
+          </Text>
+          <Text style={styles.textBase}> {date.toString()}</Text>
+        </View>
+
+        <View style={styles.amountContainer}>
+          <Text style={styles.amount}> {amount} </Text>
+        </View>
       </View>
     </Pressable>
   );
