@@ -8,35 +8,35 @@ const DUMMY_DATA = [
     id: "e1",
     amount: 12.99,
     description: "A pair of glasses",
-    date: new Date("22-11-2022"),
+    date: new Date("2022-11-22"),
   },
 
   {
     id: "e2",
     amount: 12.99,
     description: "A pair of glasses",
-    date: new Date("23-9-2023"),
+    date: new Date("2023-9-23"),
   },
 
   {
     id: "e3",
     amount: 5.99,
     description: "Banana",
-    date: new Date("25-11-2023"),
+    date: new Date("2023-11-25"),
   },
 
   {
     id: "e4",
     amount: 22.99,
     description: "A pair of shoe",
-    date: new Date("12-10-2023"),
+    date: new Date("2023-10-12"),
   },
 
   {
     id: "e5",
     amount: 16.99,
     description: "A Book",
-    date: new Date("10-11-2023"),
+    date: new Date("2023-11-10"),
   },
 ];
 

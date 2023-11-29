@@ -1,16 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-
-import { NavigationContainer } from "@react-navigation/native";
-
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Ionicons } from "@expo/vector-icons";
 import AllExpenses from "./screens/AllExpenses";
+import { GlobalStyles } from "./constants/styles";
 import RecentExpense from "./screens/RecentExpense";
 import ManageExpense from "./screens/ManageExpense";
-import { GlobalStyles } from "./constants/styles";
-
-import { Ionicons } from "@expo/vector-icons";
 import IconButtons from "./components/UI/IconButtons";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 

@@ -1,12 +1,12 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
+import { dateFormatter } from "../../utils/date";
 
 function ExpenseItem({ description, date, amount }) {
   const onPressExpense = () => {};
 
   return (
     <Pressable
-      android_ripple={{ color: GlobalStyles.colors.primary400 }}
       onPress={onPressExpense}
       style={({ pressed }) => pressed && styles.pressed}
     >
@@ -16,11 +16,11 @@ function ExpenseItem({ description, date, amount }) {
             {" "}
             {description}{" "}
           </Text>
-          <Text style={styles.textBase}> {date.toString()}</Text>
+          <Text style={styles.textBase}> {dateFormatter(date)}</Text>
         </View>
 
         <View style={styles.amountContainer}>
-          <Text style={styles.amount}> {amount} </Text>
+          <Text style={styles.amount}> ${amount.toFixed(2)} </Text>
         </View>
       </View>
     </Pressable>
@@ -39,13 +39,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     borderRadius: 6,
     marginVertical: 8,
-
+    overflow: "hidden",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
 
-  pressed: { opacity: 0.75 },
+  pressed: { opacity: 0.75, overflow: "hidden" },
 
   textContainer: {
     rowGap: 3,
