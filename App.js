@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AllExpenses from "./screens/AllExpenses";
 import RecentExpense from "./screens/RecentExpense";
+import ManageExpense from "./screens/ManageExpense";
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +26,15 @@ export default function App() {
     <>
       <StatusBar style="auto" />
 
-      <NavigationContainer></NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="ExpenseOverview"
+            component={BottomTabsNavigator}
+          />
+          <Stack.Screen name="ManageExpense" component={ManageExpense} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }
