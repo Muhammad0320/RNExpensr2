@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     backgroundColor: GlobalStyles.colors.primary500,
     borderRadius: 6,
     overflow: "hidden",
-    paddingBlock: 4,
-    paddingHorizontal: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 24,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
 
   btnText: {
-    fontSize: 12,
+    fontSize: 18,
     textAlign: "center",
     color: "white",
   },
@@ -48,5 +48,7 @@ const styles = StyleSheet.create({
 
   pressed: {
     backgroundColor: GlobalStyles.colors.primary100,
+    overflow: "hidden",
+    borderRadius: 6,
   },
 });

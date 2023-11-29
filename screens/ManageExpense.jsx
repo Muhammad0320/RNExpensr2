@@ -59,10 +59,13 @@ const styles = StyleSheet.create({
     borderTopColor: GlobalStyles.colors.primary500,
     borderTopWidth: 2,
     textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   buttonContainer: {
     flexDirection: "row",
-    columnGap: 50,
+    justifyContent: "center",
+    columnGap: 60,
   },
 });
