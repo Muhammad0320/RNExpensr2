@@ -2,8 +2,14 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
 
 function ExpenseItem({ description, date, amount }) {
+  const onPressExpense = () => {};
+
   return (
-    <Pressable android_ripple={{ color: GlobalStyles.colors.primary400 }}>
+    <Pressable
+      android_ripple={{ color: GlobalStyles.colors.primary400 }}
+      onPress={onPressExpense}
+      style={({ pressed }) => pressed && styles.pressed}
+    >
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={[styles.textBase, styles.description]}>
@@ -38,6 +44,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+
+  pressed: { opacity: 0.75 },
 
   textContainer: {
     rowGap: 3,
