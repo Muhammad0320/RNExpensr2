@@ -30,6 +30,7 @@ const BottomTabsNavigator = () => {
         name="AllExpenses"
         options={{
           title: "All Expenses",
+
           tabBarLabel: "All",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="calendar" color={color} size={size} />
@@ -61,7 +62,7 @@ export default function App() {
           <Stack.Screen
             name="ExpenseOverview"
             component={BottomTabsNavigator}
-            option={{ headerShown: false }}
+            options={{ headerShown: false }}
           />
 
           <Stack.Screen name="ManageExpense" component={ManageExpense} />
