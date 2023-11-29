@@ -6,7 +6,7 @@ function ExpenseSummary({ period, expenses }) {
   return (
     <View>
       <Text> {period} </Text>
-      <Text> {totalExpensesPrice} </Text>
+      <Text> ${totalExpensesPrice.toFixed(2)} </Text>
     </View>
   );
 }
