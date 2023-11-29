@@ -3,7 +3,7 @@ import { GlobalStyles } from "../../constants/styles";
 
 function ExpenseItem({ description, date, amount }) {
   return (
-    <Pressable>
+    <Pressable android_ripple={{ color: GlobalStyles.colors.primary400 }}>
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={[styles.textBase, styles.description]}>
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 6,
+    minWidth: 80,
   },
 
   amount: {
