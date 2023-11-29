@@ -1,6 +1,7 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import ExpenseSummary from "./ExpenseSummary";
 import ExpeneList from "./ExpeneList";
+import { GlobalStyles } from "../../constants/styles";
 
 const DUMMY_DATA = [
   {
@@ -51,3 +52,11 @@ function ExpenseOutput({ expense, expensePeriod }) {
 export default ExpenseOutput;
 
 // https://api.edamam.com/api/recipes/v2/0123456789abcdef0123456789abcdef?app_id=d95f852c&app_key=b32c5195be87cc5809fa6281307f333c&type=public
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary700,
+  },
+});
