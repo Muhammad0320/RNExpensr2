@@ -10,6 +10,7 @@ import ManageExpense from "./screens/ManageExpense";
 import { GlobalStyles } from "./constants/styles";
 
 import { Ionicons } from "@expo/vector-icons";
+import IconButtons from "./components/UI/IconButtons";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,9 @@ const BottomTabsNavigator = () => {
         headerTintColor: "white",
         tabBarActiveTintColor: GlobalStyles.colors.accent500,
         tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+        headerRight: ({ tintColor }) => (
+          <IconButtons name="add" size={24} color={tintColor} />
+        ),
       }}
     >
       <BottomTabs.Screen
