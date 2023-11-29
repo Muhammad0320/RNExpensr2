@@ -1,10 +1,10 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
 
 function ExpenseItem({ description, date, amount }) {
   return (
     <View>
       <Text> {description} </Text>
-      <Text> {date} </Text>
+      <Text> {date.toString()}</Text>
       <Text> {amount} </Text>
     </View>
   );
