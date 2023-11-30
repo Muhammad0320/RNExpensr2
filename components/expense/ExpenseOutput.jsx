@@ -3,48 +3,11 @@ import ExpenseSummary from "./ExpenseSummary";
 import ExpeneList from "./ExpeneList";
 import { GlobalStyles } from "../../constants/styles";
 
-export const DUMMY_DATA = [
-  {
-    id: "e1",
-    amount: 12.99,
-    description: "A pair of glasses",
-    date: new Date("2022-11-22"),
-  },
-
-  {
-    id: "e2",
-    amount: 12.99,
-    description: "A pair of glasses",
-    date: new Date("2023-9-23"),
-  },
-
-  {
-    id: "e3",
-    amount: 5.99,
-    description: "Banana",
-    date: new Date("2023-11-25"),
-  },
-
-  {
-    id: "e4",
-    amount: 22.99,
-    description: "A pair of shoe",
-    date: new Date("2023-10-12"),
-  },
-
-  {
-    id: "e5",
-    amount: 16.99,
-    description: "A Book",
-    date: new Date("2023-11-10"),
-  },
-];
-
 function ExpenseOutput({ expense, expensePeriod }) {
   return (
     <View style={styles.container}>
-      <ExpenseSummary expenses={DUMMY_DATA} period={expensePeriod} />
-      <ExpeneList expenses={DUMMY_DATA} />
+      <ExpenseSummary expenses={expense} period={expensePeriod} />
+      <ExpeneList expenses={expense} />
     </View>
   );
 }
