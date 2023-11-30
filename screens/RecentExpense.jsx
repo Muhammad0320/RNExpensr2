@@ -1,6 +1,6 @@
-import ExpenseOutput from "../components/expense/ExpenseOutput";
-import { useExpenseContext } from "../store/expenseContext";
 import { calcLast7days } from "../utils/date";
+import { useExpenseContext } from "../store/expenseContext";
+import ExpenseOutput from "../components/expense/ExpenseOutput";
 
 function RecentExpense() {
   const { expenses } = useExpenseContext();
