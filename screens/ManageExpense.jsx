@@ -52,7 +52,7 @@ function ManageExpense({ navigation, route }) {
           cancel{" "}
         </Buttons>
 
-        <Buttons onPress={handleConfirm}> {isEdit ? "Edit" : "Add"} </Buttons>
+        <Buttons onPress={handleConfirm}>{isEdit ? "Edit" : "Add"}</Buttons>
       </View>
 
       {isEdit && (

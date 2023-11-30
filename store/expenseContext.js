@@ -99,10 +99,7 @@ export const ExpenseProvider = ({ children }) => {
   };
 
   return (
-    <ExpenseContext.Provider value={values}>
-      {" "}
-      {children}{" "}
-    </ExpenseContext.Provider>
+    <ExpenseContext.Provider value={values}>{children}</ExpenseContext.Provider>
   );
 };
 
@@ -110,7 +107,7 @@ export const useExpenseContext = () => {
   const context = useContext(ExpenseContext);
 
   if (!context)
-    throw new Error(" Expense context was used outside expense provider ");
+    throw new Error("Expense context was used outside expense provider");
 
   return context;
 };
