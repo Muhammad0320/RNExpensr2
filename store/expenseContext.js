@@ -11,11 +11,11 @@ const ExpenseContext = createContext({
 
 const expenseReducer = (state, action) => {
   switch (action.type) {
-    case ADD:
+    case "ADD":
       const id = new Date() + Math.random();
 
       return [{ ...action.payload, id }, ...state];
-    case UPDATE:
+    case "UPDATE":
       const expenseIndex = state.findIndex(
         (expense) => expense.id === action.payload.id
       );
@@ -30,7 +30,7 @@ const expenseReducer = (state, action) => {
 
       return updatedState;
 
-    case DELETE:
+    case "DELETE":
       return state.filter((expense) => expense.id !== action.payload);
 
     default:
@@ -38,8 +38,8 @@ const expenseReducer = (state, action) => {
   }
 };
 
-const ExpensePrivider = ({ children }) => {
-  const [expenseState, dispatch] = useReducer(expenseReducer, DUMMY_DATA);
+export const ExpenseProvider = ({ children }) => {
+  const [expenses, dispatch] = useReducer(expenseReducer, DUMMY_DATA);
 
   const addExpense = (expense) => {
     dispatch({ type: "ADD", payload: expense });
@@ -53,5 +53,17 @@ const ExpensePrivider = ({ children }) => {
     dispatch({ type: "UPDATE", payload: { id, data: expense } });
   };
 
-  <ExpenseContext.Provider> {children} </ExpenseContext.Provider>;
+  const values = {
+    expenses,
+    addExpense,
+    deleteExpense,
+    updateExpense,
+  };
+
+  return (
+    <ExpenseContext.Provider value={values}>
+      {" "}
+      {children}{" "}
+    </ExpenseContext.Provider>
+  );
 };
