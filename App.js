@@ -8,6 +8,7 @@ import IconButtons from "./components/UI/IconButtons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { ExpenseProvider } from "./store/expenseContext";
 
 const Stack = createNativeStackNavigator();
 
@@ -63,26 +64,30 @@ export default function App() {
     <>
       <StatusBar style="light" />
 
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
-            headerTintColor: "#f1f1f1",
-          }}
-        >
-          <Stack.Screen
-            name="ExpenseOverview"
-            component={BottomTabsNavigator}
-            options={{ headerShown: false }}
-          />
+      <ExpenseProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+              headerTintColor: "#f1f1f1",
+            }}
+          >
+            <Stack.Screen
+              name="ExpenseOverview"
+              component={BottomTabsNavigator}
+              options={{ headerShown: false }}
+            />
 
-          <Stack.Screen
-            name="ManageExpense"
-            component={ManageExpense}
-            options={{ presentation: "modal" }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+            <Stack.Screen
+              name="ManageExpense"
+              component={ManageExpense}
+              options={{ presentation: "modal" }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ExpenseProvider>
     </>
   );
 }
+
+// Text strings must be rendered within a <Text> component.
