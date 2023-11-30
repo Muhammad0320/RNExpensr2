@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { DUMMY_DATA } from "../components/expense/ExpenseOutput";
 
 const ExpenseContext = createContext({
@@ -66,4 +66,13 @@ export const ExpenseProvider = ({ children }) => {
       {children}{" "}
     </ExpenseContext.Provider>
   );
+};
+
+export const useExpenseContext = () => {
+  const context = useContext(ExpenseContext);
+
+  if (!context)
+    throw new Error(" Expense context was used outside expense provider ");
+
+  return context;
 };
