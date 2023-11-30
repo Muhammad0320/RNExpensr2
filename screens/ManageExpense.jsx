@@ -3,9 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 import IconButtons from "../components/UI/IconButtons";
 import { GlobalStyles } from "../constants/styles";
 import Buttons from "../components/UI/Buttons";
+import { useExpenseContext } from "../store/expenseContext";
 
 function ManageExpense({ navigation, route }) {
   const id = route.params?.id;
+
+  const { updateExpense, deleteExpense, addExpense } = useExpenseContext();
 
   const isEdit = Boolean(id);
 
@@ -14,10 +17,26 @@ function ManageExpense({ navigation, route }) {
   }, [isEdit, navigation]);
 
   const handleDeleteExpense = () => {
+    deleteExpense(id);
+
     navigation.goBack();
   };
 
   const handleConfirm = () => {
+    if (id) {
+      updateExpense(id, {
+        date: new Date("2023-11-20"),
+        description: "Test update",
+        amount: 25.99,
+      });
+    } else {
+      addExpense({
+        date: new Date("2023-11-25"),
+        description: "Test Add",
+        amount: 24.89,
+      });
+    }
+
     navigation.goBack();
   };
 
