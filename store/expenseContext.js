@@ -6,6 +6,7 @@ const ExpenseContext = createContext({
   deleteExpense: (id) => {},
 
   updateExpense: (id, { date, description, amount }) => {},
+  expenses: [],
 });
 
 const DUMMY_DATA = [
